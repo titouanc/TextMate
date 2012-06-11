@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -KU
+
+resulting_files = {
+  'header' =&gt; '.h', 
+  'implementation' =&gt; '.c'
+}
+
+ENV['TM_NEW_FILE_BASENAME_UPCASE'] = ENV['TM_NEW_FILE_BASENAME'].upcase
+
+resulting_files.each do |ftype, fext|
+  fname = ENV['TM_NEW_FILE'].gsub(/\.[\w\d]+/, '')+fext
+  next if File.exists? fname
+  File.open fname, 'w' do |f|
+    f.puts File.read(ftype+fext).gsub(/\$\{([^\}]+)\}/){ENV[$1]}
+  end
+end
+</string>
+	<key>extension</key>
+	<string>c</string>
+	<key>name</key>
+	<string>Implementation &amp; Header</string>
+	<key>uuid</key>
+	<string>165E95CB-6B54-47A4-84DB-F192863E7A88</string>
+</dict>
+</plist>

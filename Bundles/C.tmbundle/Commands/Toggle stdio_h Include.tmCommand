@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+doc = STDIN.read
+count = 0
+doc.gsub! /^#include\s+&lt;stdio.h&gt;\s*\n/i do
+  count = count.succ
+  ''
+end
+
+print count.zero? ? "#include &lt;stdio.h&gt;\n#{doc}" : doc
+</string>
+	<key>fallbackInput</key>
+	<string>scope</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>^	</string>
+	<key>name</key>
+	<string>Toggle stdio.h Include</string>
+	<key>output</key>
+	<string>replaceDocument</string>
+	<key>uuid</key>
+	<string>474B65F4-8E91-4C49-84A5-C75CA8468D2A</string>
+</dict>
+</plist>

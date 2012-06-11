@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -KU
+
+ENV['NEWFUNC_NAME'] = ENV['TM_NEW_FILE_BASENAME'].downcase
+
+File.open ENV['TM_NEW_FILE'], "w" do |f|
+  f.puts File.read('template_in.s').gsub(/\$\{([^\}]+)\}/){ENV[$1]}
+end</string>
+	<key>extension</key>
+	<string>s</string>
+	<key>name</key>
+	<string>C Function</string>
+	<key>uuid</key>
+	<string>5B32660F-5613-469E-AFD5-1C9AF276F171</string>
+</dict>
+</plist>
