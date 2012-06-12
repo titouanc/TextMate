@@ -2,8 +2,9 @@
 _${NEWFUNC_NAME} : 
   pushl %ebp 
   movl %esp, %ebp
-  ;movl 8(%ebp), %edx ;first argument
+  subl $0, %esp /* local stack reservation */
 
 end${NEWFUNC_NAME}:
-  leave
+  movl %ebp, %esp
+  popl %ebp
   ret
