@@ -674,6 +674,21 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Notice</string>
+			<key>scope</key>
+			<string>valid.notice</string>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#0099FF9C</string>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#D5A666</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>TMLangDef: Keys</string>
 			<key>scope</key>
 			<string>support.constant.tm-language-def, support.constant.name.tm-language-def</string>

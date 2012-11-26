@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>log</string>
+	</array>
+	<key>firstLineMatch</key>
+	<string>version:</string>
+	<key>name</key>
+	<string>MacPorts error log</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>^:error:.*[\n#]</string>
+			<key>name</key>
+			<string>invalid.illegal</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^:notice:.*[\n#]</string>
+			<key>name</key>
+			<string>valid.notice</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>#.*\n</string>
+			<key>name</key>
+			<string>comment</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.log.macports</string>
+	<key>uuid</key>
+	<string>6B30D4D3-C6BD-4275-8ED8-504002FB7DBA</string>
+</dict>
+</plist>
